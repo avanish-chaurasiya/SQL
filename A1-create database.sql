@@ -1,10 +1,13 @@
  CREATE DATABASE startersql;
  USE startersql;
- CREATE TABLE users (
- id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    gender ENUM ('Male', 'Female', 'Other'),
+ CREATE TABLE employees (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    gender VARCHAR(10),
+    email VARCHAR(255) NOT NULL UNIQUE,
     date_of_birth DATE,
- );
+    salary DECIMAL(10, 2),
+    created_at timestamp default current_timestamp
+);
   SELECT * FROM users;
+  
